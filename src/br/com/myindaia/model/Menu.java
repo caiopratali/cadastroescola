@@ -98,6 +98,6 @@ public class Menu {
 		System.out.println("OPÇÃO INVÁLIDA.");
 		retornarAoMenu();
 		break;
-		} retornarAoMenu();
+		}
 	}
 }
