@@ -2,12 +2,14 @@ package br.com.myindaia.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class Turma {
+public class Turma{
+	
+	List<Turma> listaDeTurma = new ArrayList<>();
+	Scanner ler = new Scanner(System.in);
 	
 	private String nome;
-	private List<Turma> listaDeTurma = new ArrayList<>();
-	private List<Aluno> listaDeAlunos = new ArrayList<>();
 
 	public String getNome() {
 		return nome;
@@ -17,20 +19,19 @@ public class Turma {
 		this.nome = nome;
 	}
 
-	public List<Turma> getListaDeTurma() {
-		return listaDeTurma;
+	public void adicionarTurma(){
+	    System.out.printf("Digite o nome da turma:");
+	    nome = ler.nextLine();
+	    listaDeTurma.add(0,null);
 	}
-
-	public void setListaDeTurma(List<Turma> listaDeTurma) {
-		this.listaDeTurma = listaDeTurma;
-	}
-
-	public List<Aluno> getListaDeAlunos() {
-		return listaDeAlunos;
-	}
-
-	public void setListaDeAlunos(List<Aluno> listaDeAlunos) {
-		this.listaDeAlunos = listaDeAlunos;
-	}
-
+	
+	public void listar() {
+	    System.out.printf("Listadando os alunos");
+	    int i, n = listaDeTurma.size();
+	    for (i=0; i<n; i++) {
+	    	System.out.println();
+	      System.out.printf("Posição %d- %s\n", i, listaDeTurma.get(i));
+	    }
+	    System.out.printf("---------------------------------------");
+	  }
 }

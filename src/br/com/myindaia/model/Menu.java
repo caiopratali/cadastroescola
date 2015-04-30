@@ -1,9 +1,9 @@
 package br.com.myindaia.model;
 
+
 import java.util.Scanner;
 
 public class Menu {
-	
 
 	private static Scanner teclado;
 	
@@ -18,13 +18,14 @@ public class Menu {
 	
 	Scanner scannerMenu = new Scanner(System.in);
 
-	
-	public void retornarAoMenu(){
+
+	public void retornarAoMenu() {
 		System.out.println();
 		System.out.println("Digite ENTER para retornar ao MENU");
 		System.out.println(scannerMenu.nextLine());
 		menu();
 	}
+	
 
 	public void menu() {
 	System.out.println("************ Programa de Cadastro de Turmas ***********");
@@ -48,24 +49,23 @@ public class Menu {
 		System.out.println();
 		System.out.println("*********************************CADASTRO DE TURMA*********************************");
 		System.out.println();
-		System.out.println("Digite o nome da turma: ");
-		turma.setNome(scannerTurma.nextLine());
+		turma.adicionarTurma();
+
 	case 2:
 		System.out.println();
 		System.out.println("*********************************CADASTRO DE ALUNO*********************************");			
 		System.out.println();
-		System.out.println("Digite o nome do aluno: ");
-		aluno.setNome(scannerAluno.nextLine());
+		aluno.cadastrarAluno();
 	case 3:
 		System.out.println();
 		System.out.println("*********************************CADASTRO DE NOTAS DO ALUNO*********************************");
 		System.out.println();
 		System.out.println("Digite a primeira nota: ");
-		aluno.getNotas().add(scannerNota.nextInt());
+		aluno.notas.add(scannerNota.nextInt());
 		System.out.println("Digite a segunda nota: ");
-		aluno.getNotas().add(scannerNota.nextInt());
+		aluno.notas.add(scannerNota.nextInt());
 		System.out.println("Digite a terceira nota: ");
-		    aluno.getNotas().add(scannerNota.nextInt());
+		aluno.notas.add(scannerNota.nextInt());
 	case 4:
 		System.out.println();
 		System.out.println("*********************************MÉDIA DA TURMA*********************************");
@@ -75,20 +75,16 @@ public class Menu {
 		retornarAoMenu();
 		
 		break;
-	case 5:
+	case 5:	
 		System.out.println();
-		System.out.println("*********************************LISTA DE TURMAS*********************************");
-		System.out.println();
-		System.out.println("Turmas:");
-		//System.out.println();
+		System.out.println("*********************************LISTA DE TURMAS*********************************");  
+		turma.listar();
 		retornarAoMenu();
 		break;
 	case 6:
 		System.out.println();
 		System.out.println("*********************************LISTA DE ALUNOS*********************************");
-		//System.out.println();
-		//System.out.println("Alunos: ");
-		//System.out.println();
+		aluno.listar();
 		retornarAoMenu();
 		break;
 	case 7:
